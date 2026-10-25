@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kairav Tupil</title>
+<meta name="description" content="Kairav Tupil, Applied Mathematics and Statistics student at the University of Waterloo.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<main>
+
+<header>
+  <h1>Kairav Tupil</h1>
+  <p class="lede">I study Applied Mathematics (machine learning specialization) and Statistics at the University of Waterloo. I'm in my second year.</p>
+  <p>I like building things from the ground up to see how they actually work: an inference engine with no ML libraries, a RAG pipeline that gets graded instead of eyeballed, a PDE solver checked against the exact answer. I'm looking for a Winter 2027 co-op, ideally in ML research.</p>
+</header>
+
+<section>
+  <h2>Now</h2>
+  <ul class="plain">
+    <li>ML research at WAT.ai.</li>
+    <li>Organizing <a href="https://github.com/infrahacks2027">InfraHacks</a>, a hackathon about infrastructure.</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Experience</h2>
+  <div class="entry">
+    <p class="when">Sep 2026 &ndash; present</p>
+    <div>
+      <h3>ML Researcher, <a href="https://github.com/Offball-XI-Wat-AI">WAT.ai</a></h3>
+      <p>Working on Offball XI, a team studying off-ball movement in football: where players position themselves and how they make tactical decisions, using football data and machine learning.</p>
+    </div>
+  </div>
+  <div class="entry">
+    <p class="when">May &ndash; Aug 2026</p>
+    <div>
+      <h3>AI Developer Co-op, Compass Group</h3>
+      <p>Built a .NET web app with an embedded AI assistant that 100+ employees use for self-service support, grounded in 15+ internal documents. Wrote the SQL pipelines that feed HR data into it, and automated ETL work that cut manual processing time by 20%.</p>
+    </div>
+  </div>
+  <div class="entry">
+    <p class="when">Oct 2025 &ndash; Apr 2026</p>
+    <div>
+      <h3>Backend Software Developer, UW Orbital</h3>
+      <p>Worked on a FastAPI backend with SQLAlchemy models used by a 30+ person team. Added request and response logging middleware and brought pytest coverage of the database and API layers to 100%.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Projects</h2>
+
+  <div class="entry">
+    <p class="when">Rust, PyTorch</p>
+    <div>
+      <h3><a href="https://github.com/KairavT/rust-inference">rust-inference</a></h3>
+      <p>A neural network inference engine written from scratch in Rust. PyTorch trains a small MLP and exports the weights to JSON, and Rust loads them and runs the forward pass by hand with one generalized layer function.</p>
+      <p class="result">Matches PyTorch on 30 of 30 held-out samples.</p>
+    </div>
+  </div>
+
+  <div class="entry">
+    <p class="when">Python, LangChain, Ollama</p>
+    <div>
+      <h3><a href="https://github.com/KairavT/paper-rag">paper-rag</a></h3>
+      <p>A fully local RAG pipeline over 11 arXiv papers on RL, RLHF and transformers, with a 20 question evaluation harness used to tune chunk size and top-k.</p>
+      <p class="result">19 of 20 retrievals and 15 of 20 answers correct. Cross-encoder reranking added latency and no gain.</p>
+    </div>
+  </div>
+
+  <div class="entry">
+    <p class="when">Python, PyTorch</p>
+    <div>
+      <h3><a href="https://github.com/KairavT/pde-solver">pde-solver</a></h3>
+      <p>Solves the 1D heat equation with finite differences and with a physics-informed neural network, and checks both against the exact solution.</p>
+      <p class="result">The PINN lands within 0.0005 RMS error. Finite differences is still faster and more accurate on this problem.</p>
+    </div>
+  </div>
+
+  <div class="entry">
+    <p class="when">Python, Beautiful Soup</p>
+    <div>
+      <h3><a href="https://github.com/KairavT/linkedin-job-alerts">linkedin-job-alerts</a></h3>
+      <p>Searches LinkedIn every day for postings that match a list of titles and emails the new ones. It matches similar titles, reads the work term out of the posting, and flags likely reposts using job IDs.</p>
+      <p class="result">The term check gets 34 of 34 test cases right.</p>
+    </div>
+  </div>
+
+  <div class="entry">
+    <p class="when">Python, scikit-learn</p>
+    <div>
+      <h3><a href="https://github.com/KairavT/chess-predictor">chess-predictor</a></h3>
+      <p>A random forest that predicts the result of a chess game from 20,000 Lichess games. Rating difference mattered most, and openings barely mattered at all.</p>
+      <p class="result">65% accuracy across white win, black win and draw.</p>
+    </div>
+  </div>
+
+  <div class="entry">
+    <p class="when">Python, FastAPI</p>
+    <div>
+      <h3><a href="https://github.com/alexanderli07/earshot">Earshot</a></h3>
+      <p>Offline sound awareness for people who are hard of hearing. A Raspberry Pi listens with a local YAMNet model and sends alerts to a wearable, a dashboard and a phone. Built with a team.</p>
+    </div>
+  </div>
+
+  <div class="entry">
+    <p class="when">Python, OpenCV</p>
+    <div>
+      <h3><a href="https://github.com/KairavT/page-complexity">page-complexity</a></h3>
+      <p>Scores how dense a page of text is from a photo. It finds and flattens the page, then measures ink density, line spacing and text size.</p>
+    </div>
+  </div>
+
+  <div class="entry">
+    <p class="when">Python, PyTorch</p>
+    <div>
+      <h3><a href="https://github.com/KairavT/neetcode-gpt">neetcode-gpt</a></h3>
+      <p>A GPT put together from my own solutions to the NeetCode ML course, from backprop up through attention, a KV cache and a BPE tokenizer.</p>
+    </div>
+  </div>
+
+  <p class="also">Smaller things: a <a href="https://github.com/KairavT/C-Neural-Network">neural network in C</a> that learns XOR, <a href="https://github.com/KairavT/AI-Water-Tracker">H2Optimize</a>, which shortens prompts with an in-browser LLM before sending them to a hosted one, and <a href="https://github.com/KairavT/Connect4">Connect 4</a> from March 2024.</p>
+</section>
+
+<section>
+  <h2>Contact</h2>
+  <ul class="plain">
+    <li><a href="mailto:kmtupil@uwaterloo.ca">kmtupil@uwaterloo.ca</a></li>
+    <li><a href="https://github.com/KairavT">GitHub</a>, <a href="https://www.linkedin.com/in/kairav-tupil">LinkedIn</a>, <a href="resume.pdf">Resume (PDF)</a></li>
+  </ul>
+</section>
+
+</main>
+
+<footer>
+  <p>Last updated October 2026.</p>
+</footer>
+
+</body>
+</html>
