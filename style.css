@@ -95,7 +95,8 @@ section::before {
   opacity: calc(1 - var(--leave, 0) * 0.85);
 }
 
-/* once it is gone, a small bar drops in with the name and the section you are in */
+/* the bar along the top always holds the links; once the big name is gone,
+   the name and the section you are in drop into it */
 .bar {
   position: fixed;
   top: 0;
@@ -103,12 +104,25 @@ section::before {
   right: 0;
   z-index: 2;
   background: var(--paper);
-  border-bottom: 1px solid var(--rule);
-  transform: translateY(-101%);
-  transition: transform 0.28s cubic-bezier(0.2, 0.7, 0.2, 1);
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s ease;
 }
 
-.bar.shown { transform: none; }
+.bar.shown { border-bottom-color: var(--rule); }
+
+.js .bar-left {
+  opacity: 0;
+  transform: translateY(-0.6em);
+  visibility: hidden;
+  transition: opacity 0.25s ease, transform 0.28s cubic-bezier(0.2, 0.7, 0.2, 1), visibility 0.28s;
+}
+
+.js .bar.shown .bar-left { opacity: 1; transform: none; visibility: visible; }
+
+.bar-section { margin-left: 0.9rem; }
+
+.bar-nav a { font-size: 0.9rem; }
+.bar-nav a[aria-current] { color: var(--accent); text-decoration: none; }
 
 .bar-inner {
   max-width: calc(var(--measure) + 10rem);
@@ -158,7 +172,7 @@ section::before {
   .js section { --drawn: 1; }
   .js header h1 { transform: none; opacity: 1; }
   .js .rise { opacity: 1; transform: none; transition: none; }
-  .bar, .entry h3 a { transition: none; }
+  .bar, .js .bar-left, .entry h3 a { transition: none; }
   .bar-section.swap { animation: none; }
 }
 
