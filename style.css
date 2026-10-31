@@ -110,19 +110,31 @@ section::before {
 
 .bar.shown { border-bottom-color: var(--rule); }
 
-.js .bar-left {
+.js .bar-name, .js .bar-section {
   opacity: 0;
   transform: translateY(-0.6em);
   visibility: hidden;
   transition: opacity 0.25s ease, transform 0.28s cubic-bezier(0.2, 0.7, 0.2, 1), visibility 0.28s;
 }
 
-.js .bar.shown .bar-left { opacity: 1; transform: none; visibility: visible; }
+.js .bar.shown .bar-name, .js .bar.shown .bar-section { opacity: 1; transform: none; visibility: visible; }
 
-.bar-section { margin-left: 0.9rem; }
+/* the links are set like the section labels */
+.bar-nav {
+  display: flex;
+  align-items: baseline;
+  gap: 1.4rem;
+}
 
-.bar-nav a { font-size: 0.9rem; }
-.bar-nav a[aria-current] { color: var(--accent); text-decoration: none; }
+.bar-nav a {
+  font-size: 0.8rem;
+  text-transform: lowercase;
+  font-variant: small-caps;
+  letter-spacing: 0.12em;
+  text-decoration: none;
+}
+
+.bar-nav a:hover, .bar-nav a[aria-current] { color: var(--accent); }
 
 .bar-inner {
   max-width: calc(var(--measure) + 10rem);
@@ -172,7 +184,7 @@ section::before {
   .js section { --drawn: 1; }
   .js header h1 { transform: none; opacity: 1; }
   .js .rise { opacity: 1; transform: none; transition: none; }
-  .bar, .js .bar-left, .entry h3 a { transition: none; }
+  .bar, .js .bar-name, .js .bar-section, .entry h3 a { transition: none; }
   .bar-section.swap { animation: none; }
 }
 
