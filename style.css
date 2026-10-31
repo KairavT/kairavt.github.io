@@ -110,14 +110,17 @@ section::before {
 
 .bar.shown { border-bottom-color: var(--rule); }
 
-.js .bar-name, .js .bar-section {
+.js .bar-name, .js .bar-nav > * {
   opacity: 0;
   transform: translateY(-0.6em);
   visibility: hidden;
   transition: opacity 0.25s ease, transform 0.28s cubic-bezier(0.2, 0.7, 0.2, 1), visibility 0.28s;
 }
 
-.js .bar.shown .bar-name, .js .bar.shown .bar-section { opacity: 1; transform: none; visibility: visible; }
+/* the name comes in first, then the section, then Resume */
+.js .bar.shown .bar-name, .js .bar.shown .bar-nav > * { opacity: 1; transform: none; visibility: visible; }
+.js .bar.shown .bar-section { transition-delay: 0.05s; }
+.js .bar.shown .bar-nav a { transition-delay: 0.1s; }
 
 /* the links are set like the section labels */
 .bar-nav {
@@ -184,7 +187,7 @@ section::before {
   .js section { --drawn: 1; }
   .js header h1 { transform: none; opacity: 1; }
   .js .rise { opacity: 1; transform: none; transition: none; }
-  .bar, .js .bar-name, .js .bar-section, .entry h3 a { transition: none; }
+  .bar, .js .bar-name, .js .bar-nav > *, .entry h3 a { transition: none; }
   .bar-section.swap { animation: none; }
 }
 
