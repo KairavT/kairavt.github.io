@@ -236,47 +236,6 @@ p { margin: 0 0 0.4rem; }
 
 .plain li { margin-bottom: 0.45rem; }
 
-/* resume page */
-
-.back { font-size: 0.8rem; margin-bottom: 0.6rem; }
-.back a { color: var(--muted); }
-.back a::before { content: "\2190\00a0"; }
-
-.points {
-  margin: 0.3rem 0 0;
-  padding: 0;
-  list-style: none;
-}
-
-.points li {
-  position: relative;
-  padding-left: 1rem;
-  margin-bottom: 0.3rem;
-}
-
-.points li::before {
-  content: "\2013";
-  position: absolute;
-  left: 0;
-  color: var(--muted);
-}
-
-.skills {
-  margin: 0;
-  max-width: var(--measure);
-  display: grid;
-  grid-template-columns: max-content 1fr;
-  gap: 0.35rem 1.2rem;
-}
-
-.skills dt { color: var(--muted); }
-.skills dd { margin: 0; }
-
-@media (max-width: 559px) {
-  .skills { grid-template-columns: 1fr; gap: 0; }
-  .skills dd { margin-bottom: 0.5rem; }
-}
-
 footer {
   font-size: 0.8rem;
   color: var(--muted);
